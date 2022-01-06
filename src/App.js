@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+     let [coins, setCoins] = useState(0)
+     
+   //   function increment(t){
+   //      if(coins <=9)
+   //          setCoins(coins + t)
+   //    }
+   //   function decrement(t){
+   //      if(coins >=2){
+   //        setCoins(coins - t)
+   //      }
+   //   }
+   //  function reset(){
+   //      setCoins(0)
+   //   }
+
+    return (
+        <div>
+           <h1>You have {coins} coins</h1>
+           <button onClick={()=>(coins<=9 ? setCoins(coins+1): "")}> Increment </button> 
+           <button onClick={()=>(coins>=2 ? setCoins(coins-1): "")}> Decrement </button> 
+           <button onClick={()=>setCoins(0)}> Reset </button>  
+
+        </div>
+    )
 }
-
-export default App;
+export default App
